@@ -1,24 +1,14 @@
-# README
+# Christie's Personal Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Technologies:
+Ruby on Rails/React on Rails
+React.js
 
-Things you may want to cover:
+Oauth login with Facebook or create a new account with an email
 
-* Ruby version
+## Minimum Viable Product
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1) Index page to display new content; client-facing
+2) Show page for articles; client-facing
+3) Edit page with draft.js; user-facing
+4) Content Management System, mongoDB/ElasticSearch?
