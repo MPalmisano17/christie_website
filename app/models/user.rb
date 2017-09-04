@@ -12,7 +12,7 @@ class User < ApplicationRecord
     if user.nil?
       email = auth.info.email || auth.info.verified_email
       pen_name = auth.info.name
-      user = User.find_or_initialize_by(
+      user = find_or_initialize_by(
         email: email,
         pen_name: pen_name,
         password: Devise.friendly_token[0, 20]

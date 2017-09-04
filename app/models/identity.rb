@@ -4,7 +4,6 @@ class Identity < ApplicationRecord
   validates_uniqueness_of :uid, scope: :provider
 
   def self.find_by_oauth(auth)
-    binding.pry
     find_of_create_by(uid: auth.uid, provider: auth.provider)
   end
 end
