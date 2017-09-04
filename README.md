@@ -1,8 +1,8 @@
 # Christie's Personal Blog
 
 Technologies:
-Ruby on Rails/React on Rails
-React.js
+- Ruby on Rails/React on Rails
+- React.js
 
 Oauth login with Facebook or create a new account with an email
 
