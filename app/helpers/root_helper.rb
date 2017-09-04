@@ -1,2 +1,2 @@
-module LandingHelper
+module RootHelper
 end

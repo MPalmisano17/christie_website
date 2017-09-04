@@ -29,3 +29,4 @@ node_modules
 /public/webpack/*
 
 .DS_Store
+.env
