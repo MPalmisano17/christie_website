@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  validates_presence_of :email
+  validates_uniqueness_of :email
+
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable, :trackable, :validatable, :confirmable,
          :omniauthable, omniauth_providers: [:facebook]
@@ -12,13 +15,21 @@ class User < ApplicationRecord
     if user.nil?
       email = auth.info.email || auth.info.verified_email
       pen_name = auth.info.name
-      user = find_or_initialize_by(
-        email: email,
-        pen_name: pen_name,
-        password: Devise.friendly_token[0, 20]
-      )
-      user.skip_confirmation!
-      user.save!
+      user = find_by(email: email)
+
+      if user.nil?
+        user = new(
+          email: email,
+          pen_name: pen_name,
+          password: Devise.friendly_token[0, 20]
+        )
+        user.skip_confirmation!
+        user.save!
+      end
     end
+
+    identity.update!(user_id: user) if user != identity.user
+
+    return user
   end
 end

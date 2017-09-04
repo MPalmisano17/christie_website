@@ -1,6 +1,11 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
-    binding.pry
-    puts 'hereeeeeeeeeeeeeeeee'
+    @user = User.find_by_oauth(env['omniauth.auth'], current_user)
+
+    if @user.persisted?
+        sign_in @user
+    else
+
+    end
   end
 end
