@@ -3,7 +3,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.find_by_oauth(env['omniauth.auth'], current_user)
 
     if @user.persisted?
-        sign_in @user
+      sign_in @user
     else
 
     end
