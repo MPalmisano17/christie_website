@@ -14,7 +14,7 @@ development:
 
   # Developer note: considering removing this option so it can ONLY be turned by using an ENV value.
   # Default is false, ENV 'HOT_RELOAD' will always override
-  hot_reloading_enabled_by_default: false
+  hot_reloading_enabled_by_default: true
 
 test:
   <<: *default

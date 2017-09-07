@@ -18,10 +18,12 @@ const config = {
 
   entry: {
     'webpack-bundle': [
+      'react-hot-loader/patch',
+      'webpack-dev-server/client?http://localhost:3500',
       'es5-shim/es5-shim',
       'es5-shim/es5-sham',
       'babel-polyfill',
-      './app/bundles/Main/startup/registration',
+      './app/bundles/v1/startup/registration',
     ],
   },
 
