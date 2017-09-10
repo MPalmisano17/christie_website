@@ -46,7 +46,7 @@ const devServer = new WebpackDevServer(compiler, {
   },
 });
 
-devServer.listen(hotReloadingPort, hotReloadingHostname, err => {
+devServer.listen((hotReloadingPort, hotReloadingHostname, error) => {
   if (err) console.error(err);
   console.log(
     `=> 🔥  Webpack development server is running on ${hotReloadingUrl}`
