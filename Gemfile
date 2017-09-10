@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'react_on_rails'
+gem 'react_on_rails', '~> 9.0.0.beta.12'
 
 gem 'devise'
 gem 'omniauth'
